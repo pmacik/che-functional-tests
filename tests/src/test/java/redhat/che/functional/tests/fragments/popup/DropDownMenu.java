@@ -13,7 +13,7 @@ package redhat.che.functional.tests.fragments.popup;
 import org.jboss.arquillian.graphene.Graphene;
 import org.jboss.arquillian.graphene.findby.FindByJQuery;
 import org.openqa.selenium.WebElement;
-
+@Deprecated
 public class DropDownMenu extends PopupMenu {
 
     @FindByJQuery("nobr[id='CommandsGroup/build']")
