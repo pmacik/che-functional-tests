@@ -93,7 +93,7 @@ public class CheWorkspaceManager {
 
             logger.info("Workspace " + createdWkspc.getIdeName() + " created and started.");
         } else if (!CheWorkspaceService.getWorkspaceStatus(createdWkspc, bearerToken).equals(CheWorkspaceStatus.RUNNING.toString())) {
-            cheWorkspaceProviderInstanceProducer.get().startWorkspace(createdWkspc);
+            CheWorkspaceService.startWorkspace(createdWkspc, bearerToken);
             logger.info("Workspace " + createdWkspc.getIdeName() + " started.");
         }
     }

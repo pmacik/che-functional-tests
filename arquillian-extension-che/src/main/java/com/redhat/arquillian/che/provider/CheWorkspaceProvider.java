@@ -107,22 +107,6 @@ public class CheWorkspaceProvider {
         return CheWorkspaceService.getWorkspaceFromDocument(jsonDocument, cheWorkspaceUrl);
     }
 
-    public boolean stopWorkspace(CheWorkspace workspace){
-        CheWorkspaceService.stopWorkspace(workspace, keycloakToken);
-        if(CheWorkspaceService.getWorkspaceStatus(workspace, keycloakToken).equals(CheWorkspaceStatus.STOPPED.getStatus())){
-            return true;
-        }
-        return  false;
-    }
-
-    public boolean startWorkspace(CheWorkspace workspace){
-        CheWorkspaceService.startWorkspace(workspace, keycloakToken);
-        if(CheWorkspaceService.getWorkspaceStatus(workspace, keycloakToken).equals(CheWorkspaceStatus.RUNNING.getStatus())){
-            return true;
-        }
-        return  false;
-    }
-
     public static CheExtensionConfiguration getConfiguration() {
         return configuration;
     }

@@ -62,9 +62,9 @@ public class WorkspacesTestCase {
 
     @After
     public void resetWorkspaces(){
-        Assert.assertTrue(provider.stopWorkspace(secondWorkspace));
+        CheWorkspaceService.stopWorkspace(secondWorkspace, token);
         logger.info("Second workspace stopped");
-        Assert.assertTrue(provider.startWorkspace(firstWorkspace));
+        CheWorkspaceService.startWorkspace(firstWorkspace, token);
         logger.info("First workspace started");
         CheWorkspaceService.deleteWorkspace(secondWorkspace, token);
     }
